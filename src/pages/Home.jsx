@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Marquee from '../components/Marquee';
 import WaveDivider from '../components/WaveDivider';
+import FoodFeatureShowcase from '../components/FoodFeatureShowcase';
 import { ArrowRight } from 'lucide-react';
 import { PHONE_DISPLAY, PHONE_TEL, DIRECTIONS } from '../constants/contact';
 import './Home.css';
@@ -16,8 +17,6 @@ const marqueeItems = [
   'FROZEN COCKTAILS',
   'HOT DOGS',
 ];
-
-// Static image fallback for the burger applied inline
 
 const Home = () => {
   const location = useLocation();
@@ -58,46 +57,8 @@ const Home = () => {
       {/* 2. Yellow Marquee */}
       <Marquee items={marqueeItems} color="yellow" speed="22s" />
 
-      {/* 3. Food Showcase */}
-      <section className="section bg-teal food-showcase">
-        <div className="container">
-          <h3 className="section-eyebrow text-white text-opacity-60">Fresh & Real</h3>
-          <h2 className="section-title text-white">The Food <br/> Hits Different.</h2>
-          
-          <div className="food-grid">
-            <div className="food-card card-1">
-              {/* Note: In Vite, imports from standard paths need to exist. I will place a standard img structure. */}
-              <div className="food-img-wrapper">
-                <img src="/baja_burger_1774626452140.png" alt="Baja Burger" className="food-img" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=800'; }} />
-              </div>
-              <div className="food-card-overlay">
-                <span className="food-name">Baja Burger</span>
-                <span className="food-price">$11.95</span>
-              </div>
-            </div>
-            
-            <div className="food-card card-2">
-              <div className="food-img-wrapper">
-                <img src="/fish_tacos.jpg" alt="Fish Tacos" className="food-img" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&q=80&w=800'; }} />
-              </div>
-              <div className="food-card-overlay">
-                <span className="food-name">Fish Tacos</span>
-                <span className="food-price">$5.95</span>
-              </div>
-            </div>
-
-            <div className="food-card card-3">
-              <div className="food-img-wrapper">
-                <img src="/poutine.jpg" alt="Poutine" className="food-img" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1588168333986-50882e382d54?auto=format&fit=crop&q=80&w=800'; }}/>
-              </div>
-              <div className="food-card-overlay">
-                <span className="food-name">Poutine</span>
-                <span className="food-price">$11.95</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 3. Food showcase — tabbed hero + story (pattern from 21st.dev via Magic MCP) */}
+      <FoodFeatureShowcase />
 
       {/* 4. Menu Preview */}
       <section className="section bg-white menu-preview">
