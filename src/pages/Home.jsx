@@ -125,6 +125,24 @@ const Home = () => {
                 <span className="food-price">$11.95</span>
               </div>
             </div>
+
+            <div className="food-card card-4">
+              <div className="food-img-wrapper">
+                <img
+                  src={publicAsset('showcase-chicken-tenders.png')}
+                  alt="Chicken tenders and fries"
+                  className="food-img"
+                  onError={(e) => {
+                    e.target.src =
+                      'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&q=80&w=800';
+                  }}
+                />
+              </div>
+              <div className="food-card-overlay">
+                <span className="food-name">Tenders & Fries</span>
+                <span className="food-price">$13.00</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

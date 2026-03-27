@@ -110,7 +110,7 @@
 /* 3. Food Showcase */
 .food-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 }
 
@@ -131,6 +131,9 @@
 }
 .card-3 {
   transform: rotate(-1.5deg);
+}
+.card-4 {
+  transform: rotate(1.8deg) translateY(24px);
 }
 
 .food-card:hover {
@@ -362,11 +365,11 @@
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
-  .card-3 {
-    display: none;
-  }
-  .card-2 {
-    transform: rotate(1.5deg) translateY(0);
+  .card-1,
+  .card-2,
+  .card-3,
+  .card-4 {
+    transform: none;
   }
 
   .menu-columns,
