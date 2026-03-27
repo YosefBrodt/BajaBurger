@@ -7,6 +7,12 @@
   margin-bottom: 40px;
 }
 
+.reviews-marquee-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 .reviews-marquee-mask {
   overflow: hidden;
   width: 100%;
@@ -30,8 +36,17 @@
   display: flex;
   width: max-content;
   gap: 20px;
-  animation: reviews-scroll-x 75s linear infinite;
+  animation: reviews-scroll-x linear infinite;
   will-change: transform;
+}
+
+/* Both rows scroll left; slightly different speeds so the motion feels less repetitive */
+.reviews-marquee-track--row-a {
+  animation-duration: 82s;
+}
+
+.reviews-marquee-track--row-b {
+  animation-duration: 96s;
 }
 
 .reviews-marquee-group {
@@ -109,14 +124,18 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .reviews-marquee-rows {
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+
   .reviews-marquee-track {
     animation: none;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 5%;
     row-gap: 16px;
   }
 

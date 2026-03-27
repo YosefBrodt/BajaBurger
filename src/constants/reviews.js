@@ -49,3 +49,9 @@ export const REVIEWS = [
     source: 'Google',
   },
 ];
+
+const mid = Math.ceil(REVIEWS.length / 2);
+/** First half — top scrolling row */
+export const REVIEWS_ROW1 = REVIEWS.slice(0, mid);
+/** Second half — bottom scrolling row */
+export const REVIEWS_ROW2 = REVIEWS.slice(mid);

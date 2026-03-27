@@ -1,6 +1,6 @@
 import React from 'react';
 import { Star } from 'lucide-react';
-import { REVIEWS } from '../constants/reviews';
+import { REVIEWS_ROW1, REVIEWS_ROW2 } from '../constants/reviews';
 import './ReviewsMarquee.css';
 
 const ReviewCard = ({ quote, name, source }) => (
@@ -20,6 +20,23 @@ const ReviewCard = ({ quote, name, source }) => (
   </article>
 );
 
+const ReviewRow = ({ reviews, rowClass }) => (
+  <div className="reviews-marquee-mask">
+    <div className={`reviews-marquee-track ${rowClass}`}>
+      <div className="reviews-marquee-group">
+        {reviews.map((r, i) => (
+          <ReviewCard key={`r1-${i}`} {...r} />
+        ))}
+      </div>
+      <div className="reviews-marquee-group" aria-hidden="true">
+        {reviews.map((r, i) => (
+          <ReviewCard key={`r2-${i}`} {...r} />
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
 const ReviewsMarquee = () => {
   return (
     <section
@@ -34,22 +51,12 @@ const ReviewsMarquee = () => {
       </div>
 
       <div
-        className="reviews-marquee-mask"
+        className="reviews-marquee-rows"
         role="region"
-        aria-label="Customer reviews, scrolling"
+        aria-label="Customer reviews, two scrolling rows"
       >
-        <div className="reviews-marquee-track">
-          <div className="reviews-marquee-group">
-            {REVIEWS.map((r, i) => (
-              <ReviewCard key={`a-${i}`} {...r} />
-            ))}
-          </div>
-          <div className="reviews-marquee-group" aria-hidden="true">
-            {REVIEWS.map((r, i) => (
-              <ReviewCard key={`b-${i}`} {...r} />
-            ))}
-          </div>
-        </div>
+        <ReviewRow reviews={REVIEWS_ROW1} rowClass="reviews-marquee-track--row-a" />
+        <ReviewRow reviews={REVIEWS_ROW2} rowClass="reviews-marquee-track--row-b" />
       </div>
     </section>
   );
