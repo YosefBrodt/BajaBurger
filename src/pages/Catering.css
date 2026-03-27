@@ -63,9 +63,10 @@
 }
 
 .step-desc {
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 14px;
-  line-height: 1.6;
+  font-family: var(--font-story);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.65;
 }
 
 /* Catering Menu */
@@ -105,7 +106,8 @@
   border-bottom: 1px solid rgba(26, 191, 176, 0.1);
   color: var(--color-orange);
   font-weight: 500;
-  font-size: 15px;
+  font-size: 1.05rem;
+  line-height: 1.5;
   display: flex;
   align-items: center;
   position: relative;
@@ -149,7 +151,7 @@
 .includes-chip {
   color: var(--color-white);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.98rem;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -221,9 +223,11 @@
 }
 
 .tier-desc {
-  color: rgba(245, 98, 28, 0.45);
-  font-size: 14px;
-  font-weight: 500;
+  font-family: var(--font-story);
+  color: rgba(245, 98, 28, 0.55);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.55;
   margin-bottom: 32px;
 }
 
@@ -260,9 +264,10 @@
 }
 
 .tier-list li {
-  color: rgba(245, 98, 28, 0.65);
+  color: rgba(245, 98, 28, 0.72);
   font-weight: 500;
-  font-size: 15px;
+  font-size: 1.05rem;
+  line-height: 1.45;
   display: flex;
   align-items: center;
   position: relative;
@@ -285,6 +290,13 @@
   width: 100%;
 }
 
+.pricing-note {
+  font-family: var(--font-story);
+  font-size: 1rem;
+  color: rgba(245, 98, 28, 0.55);
+  line-height: 1.55;
+}
+
 /* Locations strip */
 .locations-strip {
   padding: 40px 5%;
@@ -304,8 +316,10 @@
 }
 
 .loc-strip-sub {
-  color: rgba(245, 98, 28, 0.6);
+  font-size: 1.05rem;
+  color: rgba(245, 98, 28, 0.65);
   font-weight: 500;
+  line-height: 1.5;
 }
 
 .loc-chips {
@@ -317,10 +331,10 @@
 .loc-chip {
   background-color: rgba(245, 98, 28, 0.1);
   border: 1px solid rgba(245, 98, 28, 0.25);
-  padding: 8px 16px;
+  padding: 10px 18px;
   border-radius: 9999px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 0.9rem;
 }
 
 .custom-chip {

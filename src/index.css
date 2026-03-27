@@ -6,7 +6,11 @@
   --color-offwhite: #FFF8F0;
 
   --font-display: 'Bebas Neue', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-body: 'Sora', system-ui, sans-serif;
+  --font-story: 'Fraunces', Georgia, 'Times New Roman', serif;
+
+  --nav-height: 68px;
+  --menu-sticky-height: 84px;
 }
 
 * {
@@ -17,6 +21,8 @@
 
 body {
   font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.55;
   background-color: var(--color-offwhite);
   color: var(--color-orange);
   overflow-x: hidden;
@@ -135,6 +141,29 @@ button {
 .bg-yellow { background-color: var(--color-yellow); }
 .bg-white { background-color: var(--color-white); }
 .bg-offwhite { background-color: var(--color-offwhite); }
+
+/* Shared section typography (Home, Menu, Catering) */
+.text-opacity-60 { opacity: 0.6; }
+.text-opacity-50 { opacity: 0.5; }
+.text-opacity-55 { opacity: 0.55; }
+.text-opacity-75 { opacity: 0.75; }
+
+.section-eyebrow {
+  font-family: var(--font-story);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.125rem;
+  margin-bottom: 12px;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+}
+
+.section-title {
+  font-size: clamp(3rem, 7vw, 5.25rem);
+  margin-bottom: 3.75rem;
+  line-height: 0.92;
+}
 
 .text-orange { color: var(--color-orange); }
 .text-teal { color: var(--color-teal); }

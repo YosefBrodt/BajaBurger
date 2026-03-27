@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Marquee from '../components/Marquee';
 import './Menu.css';
+
+const NAV_HEIGHT = 68;
 
 const marqueeItems = ['FROZEN COCKTAILS $15.95', 'BEER FROM $7.50', 'REAL FRUIT CHILLERS $10.50', '20oz MILKSHAKES $11.95', 'SELTZERS & COOLERS $8.50'];
 
@@ -15,19 +17,24 @@ const categories = [
 
 const Menu = () => {
   const [activeTab, setActiveTab] = useState('burgers');
+  const stickyNavRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveTab(entry.target.id);
-        }
-      });
-    }, {
-      rootMargin: '-30% 0px -60% 0px'
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveTab(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-28% 0px -55% 0px',
+        threshold: 0,
+      }
+    );
 
-    categories.forEach(cat => {
+    categories.forEach((cat) => {
       const el = document.getElementById(cat.id);
       if (el) observer.observe(el);
     });
@@ -35,15 +42,21 @@ const Menu = () => {
     return () => observer.disconnect();
   }, []);
 
-  const scrollTo = (id) => {
+  const scrollTo = useCallback((id) => {
     const el = document.getElementById(id);
-    if (el) {
+    if (!el) return;
+
+    requestAnimationFrame(() => {
+      const stickyH = stickyNavRef.current?.offsetHeight ?? 80;
+      const top =
+        el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT - stickyH;
+
       window.scrollTo({
-        top: el.offsetTop - 130, // Account for fixed nav + sticky tabs
-        behavior: 'smooth'
+        top: Math.max(0, top),
+        behavior: 'smooth',
       });
-    }
-  };
+    });
+  }, []);
 
   return (
     <div className="menu-page bg-offwhite">
@@ -66,7 +79,7 @@ const Menu = () => {
       </section>
 
       {/* 2. Sticky Nav */}
-      <div className="sticky-nav bg-orange">
+      <div ref={stickyNavRef} className="sticky-nav bg-orange">
         <div className="sticky-nav-container">
           {categories.map(cat => (
             <button 

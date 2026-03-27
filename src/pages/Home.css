@@ -9,27 +9,6 @@
   z-index: 10;
 }
 
-/* Base text opacities using standard css variables */
-.text-opacity-60 { opacity: 0.6; }
-.text-opacity-50 { opacity: 0.5; }
-.text-opacity-55 { opacity: 0.55; }
-.text-opacity-75 { opacity: 0.75; }
-
-.section-eyebrow {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 16px;
-  margin-bottom: 8px;
-  text-transform: none;
-  letter-spacing: normal;
-}
-
-.section-title {
-  font-size: clamp(52px, 7vw, 88px);
-  margin-bottom: 60px;
-  line-height: 0.9;
-}
-
 .mt-8 { margin-top: 32px; }
 .mt-auto { margin-top: auto; }
 .z-10 { z-index: 10; }
@@ -59,10 +38,12 @@
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid var(--color-white);
   color: var(--color-white);
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 9999px;
-  font-size: 14px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   font-weight: 700;
+  letter-spacing: 0.06em;
   margin-bottom: 32px;
 }
 
@@ -74,10 +55,12 @@
 }
 
 .hero-subline {
-  font-size: 20px;
-  opacity: 0.85;
-  max-width: 400px;
-  line-height: 1.5;
+  font-family: var(--font-story);
+  font-size: 1.25rem;
+  font-weight: 400;
+  opacity: 0.92;
+  max-width: 440px;
+  line-height: 1.65;
   margin-bottom: 48px;
 }
 
@@ -161,7 +144,7 @@
 }
 
 .menu-cat-title {
-  font-size: 38px;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   color: var(--color-teal);
   border-bottom: 2px solid var(--color-teal);
   padding-bottom: 12px;
@@ -178,19 +161,21 @@
 
 .menu-item-name {
   color: var(--color-orange);
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 1.05rem;
   margin-bottom: 4px;
 }
 
 .menu-item-desc {
-  color: rgba(245, 98, 28, 0.45);
-  font-size: 12px;
+  font-family: var(--font-story);
+  color: rgba(245, 98, 28, 0.55);
+  font-size: 0.95rem;
+  line-height: 1.45;
 }
 
 .menu-item-price {
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .menu-addons {
@@ -267,8 +252,8 @@
 }
 
 .loc-address {
-  color: rgba(245, 98, 28, 0.5);
-  font-size: 16px;
+  color: rgba(245, 98, 28, 0.58);
+  font-size: 1.05rem;
   font-weight: 500;
   margin-bottom: 32px;
 }
@@ -281,15 +266,18 @@
 }
 
 .loc-hours-label {
-  font-family: var(--font-display);
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--color-teal);
   text-transform: uppercase;
 }
 
 .loc-hours-value {
+  font-size: 1.05rem;
   color: var(--color-orange);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* 7. Catering CTA */
@@ -298,9 +286,11 @@
 }
 
 .catering-subline {
-  font-size: 20px;
-  max-width: 500px;
+  font-family: var(--font-story);
+  font-size: 1.25rem;
+  max-width: 520px;
   margin: 24px auto 48px;
+  line-height: 1.65;
 }
 
 .catering-phone {
@@ -320,7 +310,7 @@
 }
 
 .phone-note {
-  font-size: 16px;
+  font-size: 1.05rem;
   font-weight: 500;
 }
 
