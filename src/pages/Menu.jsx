@@ -62,7 +62,6 @@ const Menu = () => {
     <div className="menu-page bg-offwhite">
       {/* 1. Hero */}
       <section className="menu-hero bg-teal">
-        <div className="ghost-text">MENU</div>
         <div className="menu-hero-container">
           <div className="menu-hero-left">
             <div className="section-eyebrow text-white text-opacity-60">Ottawa Beach Food</div>
@@ -78,18 +77,41 @@ const Menu = () => {
         </div>
       </section>
 
-      {/* 2. Sticky Nav */}
+      {/* 2. Sticky Nav — tabs on desktop; jump menu on mobile */}
       <div ref={stickyNavRef} className="sticky-nav bg-orange">
-        <div className="sticky-nav-container">
-          {categories.map(cat => (
-            <button 
+        <div className="sticky-nav-container menu-sticky-tabs">
+          {categories.map((cat) => (
+            <button
               key={cat.id}
+              type="button"
               className={`sticky-tab ${activeTab === cat.id ? 'active' : ''}`}
               onClick={() => scrollTo(cat.id)}
             >
               {cat.label}
             </button>
           ))}
+        </div>
+        <div className="menu-category-jump-wrap">
+          <label htmlFor="menu-category-jump" className="visually-hidden">
+            Jump to section
+          </label>
+          <select
+            id="menu-category-jump"
+            className="menu-category-jump"
+            value={activeTab}
+            aria-label="Jump to menu section"
+            onChange={(e) => {
+              const id = e.target.value;
+              setActiveTab(id);
+              scrollTo(id);
+            }}
+          >
+            {categories.map((cat) => (
+              <option key={cat.id} value={cat.id}>
+                {cat.label}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 

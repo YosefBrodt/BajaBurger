@@ -25,10 +25,9 @@ const Catering = () => {
     <div className="catering-page bg-offwhite">
       {/* 1. Hero */}
       <section className="catering-hero bg-orange">
-        <div className="ghost-text catering-ghost" style={{bottom: '0', left: '0', transform: 'none'}}>CATERING</div>
         <div className="container relative z-10 hero-contents-c">
           <div className="hero-badge">Private Events & Group Catering</div>
-          <h1 className="hero-h1 text-white m-0 pb-16">
+          <h1 className="hero-h1 text-white m-0 catering-hero-title">
             Bring the <br /> <span className="text-yellow">Shack</span> <br /> to You.
           </h1>
           
@@ -196,7 +195,6 @@ const Catering = () => {
 
       {/* 7. CTA / Contact */}
       <section className="catering-cta section bg-teal">
-        <div className="ghost-text">BOOK IT</div>
         <div className="container text-center relative z-10">
           <h3 className="section-eyebrow text-white text-opacity-55">Let's Make It Happen</h3>
           <h2 className="section-title text-white">Ready to <br /> <span className="text-yellow">Book?</span></h2>

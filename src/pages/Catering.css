@@ -20,6 +20,10 @@
   padding-top: 32px;
 }
 
+.catering-hero-title {
+  padding-bottom: 4rem;
+}
+
 .hero-subline {
   font-size: 20px;
   max-width: 480px;
@@ -49,7 +53,7 @@
 .step-num {
   font-family: var(--font-display);
   font-size: 80px;
-  color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.28);
   margin-bottom: 16px;
   line-height: 0.8;
 }
@@ -358,41 +362,110 @@
 }
 
 @media (max-width: 800px) {
+  .catering-hero {
+    min-height: auto;
+    padding: 96px 0 0;
+  }
+
+  .catering-hero-title {
+    padding-bottom: 1.25rem;
+  }
+
+  .hero-contents-c {
+    padding-bottom: 40px;
+  }
+
   .catering-hero-bottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
+    gap: 24px;
+    padding-top: 24px;
   }
-  
+
+  .how-it-works {
+    padding: 56px 5% 72px;
+  }
+
+  .step-card {
+    padding: 40px 24px;
+  }
+
+  .step-num {
+    font-size: 56px;
+    margin-bottom: 12px;
+  }
+
+  .step-title {
+    font-size: 24px;
+  }
+
   .steps-grid {
     grid-template-columns: 1fr;
     gap: 2px;
   }
-  
+
+  .catering-menu-section {
+    padding: 56px 5% 72px;
+  }
+
   .catering-menu-grid {
     grid-template-columns: 1fr;
-    padding: 32px;
+    padding: 24px 20px;
+    gap: 40px;
   }
-  
+
+  .cat-menu-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+
+  .cat-menu-list li {
+    padding: 12px 0 12px 20px;
+    font-size: 1rem;
+  }
+
   .includes-bar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 32px;
+    padding: 24px 20px;
     gap: 16px;
   }
-  
+
+  .pricing-section {
+    padding: 56px 5% 72px;
+  }
+
   .pricing-grid {
     grid-template-columns: 1fr;
     align-items: stretch;
+    margin-top: 40px;
+    gap: 24px;
   }
-  
+
+  .pricing-card {
+    padding: 36px 28px;
+  }
+
   .pricing-card.featured {
-    padding: 48px 40px;
+    padding: 44px 28px;
   }
-  
+
+  .tier-price {
+    font-size: 64px;
+  }
+
+  .locations-strip {
+    padding: 32px 5%;
+  }
+
   .loc-strip-inner {
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
+    gap: 24px;
+  }
+
+  .catering-cta.section {
+    padding: 64px 5% 80px;
   }
 }
