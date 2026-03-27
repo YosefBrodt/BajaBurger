@@ -72,73 +72,81 @@ const Home = () => {
           <h2 className="section-title text-white">The Food <br /> Hits Different.</h2>
 
           <div className="food-grid">
-            <div className="food-card card-1">
-              <div className="food-img-wrapper">
-                <img
-                  src={publicAsset('showcase-baja-burger.png')}
-                  alt="Baja Burger"
-                  className="food-img"
-                  onError={(e) => {
-                    e.target.src =
-                      'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=800';
-                  }}
-                />
+            <div className="food-grid-item">
+              <div className="food-card card-1">
+                <div className="food-img-wrapper">
+                  <img
+                    src={publicAsset('showcase-baja-burger.png')}
+                    alt="Baja Burger"
+                    className="food-img"
+                    onError={(e) => {
+                      e.target.src =
+                        'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=800';
+                    }}
+                  />
+                </div>
               </div>
-              <div className="food-card-overlay">
+              <div className="food-card-caption">
                 <span className="food-name">Baja Burger</span>
                 <span className="food-price">$11.95</span>
               </div>
             </div>
 
-            <div className="food-card card-2">
-              <div className="food-img-wrapper">
-                <img
-                  src={publicAsset('showcase-fish-tacos.png')}
-                  alt="Fish Tacos"
-                  className="food-img"
-                  onError={(e) => {
-                    e.target.src =
-                      'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&q=80&w=800';
-                  }}
-                />
+            <div className="food-grid-item">
+              <div className="food-card card-2">
+                <div className="food-img-wrapper">
+                  <img
+                    src={publicAsset('showcase-fish-tacos.png')}
+                    alt="Fish Tacos"
+                    className="food-img"
+                    onError={(e) => {
+                      e.target.src =
+                        'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&q=80&w=800';
+                    }}
+                  />
+                </div>
               </div>
-              <div className="food-card-overlay">
+              <div className="food-card-caption">
                 <span className="food-name">Fish Tacos</span>
                 <span className="food-price">$5.95</span>
               </div>
             </div>
 
-            <div className="food-card card-3">
-              <div className="food-img-wrapper">
-                <img
-                  src={publicAsset('showcase-poutine.png')}
-                  alt="Poutine"
-                  className="food-img"
-                  onError={(e) => {
-                    e.target.src =
-                      'https://images.unsplash.com/photo-1588168333986-50882e382d54?auto=format&fit=crop&q=80&w=800';
-                  }}
-                />
+            <div className="food-grid-item">
+              <div className="food-card card-3">
+                <div className="food-img-wrapper">
+                  <img
+                    src={publicAsset('showcase-poutine.png')}
+                    alt="Poutine"
+                    className="food-img"
+                    onError={(e) => {
+                      e.target.src =
+                        'https://images.unsplash.com/photo-1588168333986-50882e382d54?auto=format&fit=crop&q=80&w=800';
+                    }}
+                  />
+                </div>
               </div>
-              <div className="food-card-overlay">
+              <div className="food-card-caption">
                 <span className="food-name">Poutine</span>
                 <span className="food-price">$11.95</span>
               </div>
             </div>
 
-            <div className="food-card card-4">
-              <div className="food-img-wrapper">
-                <img
-                  src={publicAsset('showcase-chicken-tenders.png')}
-                  alt="Chicken tenders and fries"
-                  className="food-img"
-                  onError={(e) => {
-                    e.target.src =
-                      'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&q=80&w=800';
-                  }}
-                />
+            <div className="food-grid-item">
+              <div className="food-card card-4">
+                <div className="food-img-wrapper">
+                  <img
+                    src={publicAsset('showcase-chicken-tenders.png')}
+                    alt="Chicken tenders and fries"
+                    className="food-img"
+                    onError={(e) => {
+                      e.target.src =
+                        'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&q=80&w=800';
+                    }}
+                  />
+                </div>
               </div>
-              <div className="food-card-overlay">
+              <div className="food-card-caption">
                 <span className="food-name">Tenders & Fries</span>
                 <span className="food-price">$13.00</span>
               </div>
