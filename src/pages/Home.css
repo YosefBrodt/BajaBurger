@@ -111,8 +111,15 @@
 .food-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  column-gap: 28px;
+  row-gap: 48px;
   align-items: start;
+}
+
+/* Scatter: right column (fish tacos, tenders) sits lower so cards + captions clear neighbors */
+.food-grid-item:nth-child(2),
+.food-grid-item:nth-child(4) {
+  margin-top: clamp(36px, 5.5vw, 72px);
 }
 
 .food-grid-item {
@@ -135,13 +142,13 @@
   transform: rotate(-2deg);
 }
 .card-2 {
-  transform: rotate(1.5deg) translateY(32px);
+  transform: rotate(1.5deg);
 }
 .card-3 {
   transform: rotate(-1.5deg);
 }
 .card-4 {
-  transform: rotate(1.8deg) translateY(24px);
+  transform: rotate(1.8deg);
 }
 
 .food-card:hover {
@@ -369,7 +376,12 @@
 @media (max-width: 800px) {
   .food-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    column-gap: 14px;
+    row-gap: 28px;
+  }
+  .food-grid-item:nth-child(2),
+  .food-grid-item:nth-child(4) {
+    margin-top: clamp(24px, 6vw, 44px);
   }
   .card-1,
   .card-2,
