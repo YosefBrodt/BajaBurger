@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { PHONE_TEL, MAILTO_CATERING } from '../constants/contact';
+import { LOGO_SRC } from '../constants/branding';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -22,20 +23,16 @@ const Navbar = () => {
   }, []);
 
   let navClass = 'navbar';
-  let logoClass = 'nav-logo';
   let buttonClass = 'pill-btn pill-btn-ghost nav-cta-btn';
   let buttonText = 'Call Us';
   let ctaHref = PHONE_TEL;
 
   if (path === '/') {
     navClass += scrolled ? ' nav-solid-orange' : ' nav-transparent';
-    logoClass += ' text-white';
   } else if (path === '/menu') {
     navClass += ' nav-solid-teal';
-    logoClass += ' text-white';
   } else if (path === '/catering') {
     navClass += ' nav-solid-orange';
-    logoClass += ' text-yellow';
     buttonClass = 'pill-btn pill-btn-yellow nav-cta-btn';
     buttonText = 'Get a Quote';
     ctaHref = MAILTO_CATERING;
@@ -59,8 +56,15 @@ const Navbar = () => {
     <>
       <nav className={navClass} aria-label="Main">
         <div className="nav-container">
-          <Link to="/" className={logoClass}>
-            BAJA BURGER SHACK
+          <Link to="/" className="nav-logo">
+            <img
+              src={LOGO_SRC}
+              alt="Baja Burger Shack"
+              className="nav-logo-img"
+              width={200}
+              height={56}
+              decoding="async"
+            />
           </Link>
 
           <div className="nav-links">

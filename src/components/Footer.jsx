@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PHONE_TEL, EMAIL, SOCIAL } from '../constants/contact';
+import { LOGO_SRC } from '../constants/branding';
 import './Footer.css';
 
 const Footer = () => {
@@ -8,7 +9,16 @@ const Footer = () => {
     <footer className="footer bg-orange">
       <div className="footer-container">
         <div className="footer-col col-logo">
-          <h2>BAJA BURGER SHACK</h2>
+          <Link to="/" className="footer-brand">
+            <img
+              src={LOGO_SRC}
+              alt="Baja Burger Shack"
+              className="footer-logo-img"
+              width={260}
+              height={80}
+              decoding="async"
+            />
+          </Link>
           <p>100% pure ground beef. Fresh cut fries. Cold beer at the beach.</p>
         </div>
 

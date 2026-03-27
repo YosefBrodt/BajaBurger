@@ -16,10 +16,23 @@
   gap: 16px;
 }
 
-.col-logo h2 {
-  color: var(--color-yellow);
-  font-size: 36px;
-  margin-bottom: 8px;
+.footer-brand {
+  display: inline-block;
+  line-height: 0;
+  margin-bottom: 12px;
+}
+
+.footer-brand:hover {
+  opacity: 0.92;
+}
+
+.footer-logo-img {
+  display: block;
+  width: min(240px, 85vw);
+  height: auto;
+  max-height: 72px;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .col-logo p {
@@ -66,5 +79,15 @@
   
   .col-logo p {
     margin: 0 auto;
+  }
+
+  .footer-brand {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-logo-img {
+    margin: 0 auto;
+    object-position: center;
   }
 }
