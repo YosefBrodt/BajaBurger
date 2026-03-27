@@ -8,8 +8,8 @@ import Catering from './pages/Catering';
 
 function routerBasename() {
   const base = import.meta.env.BASE_URL;
-  if (base === '/') return undefined;
-  return base.replace(/\/$/, '') || undefined;
+  if (base == null || base === '/' || base === '') return undefined;
+  return String(base).replace(/\/$/, '') || undefined;
 }
 
 // Scroll to top on route change
