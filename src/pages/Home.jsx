@@ -32,8 +32,19 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      {/* 1. Hero Section */}
-      <section className="hero bg-orange">
+      {/* 1. Hero Section — background video + brand overlay */}
+      <section className="hero hero--video">
+        <div className="hero-video-wrap" aria-hidden="true">
+          <video
+            className="hero-video"
+            src={publicAsset('hero-beach.mp4')}
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          <div className="hero-video-overlay" />
+        </div>
         <div className="ghost-text">BAJA BURGER SHACK</div>
         <div className="hero-content">
           <div className="hero-badge">
