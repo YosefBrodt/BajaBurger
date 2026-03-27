@@ -6,6 +6,8 @@ import { ArrowRight } from 'lucide-react';
 import { PHONE_DISPLAY, PHONE_TEL, DIRECTIONS } from '../constants/contact';
 import './Home.css';
 
+const publicAsset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+
 const marqueeItems = [
   'BAJA BURGER',
   'FISH TACOS',
@@ -66,7 +68,7 @@ const Home = () => {
             <div className="food-card card-1">
               <div className="food-img-wrapper">
                 <img
-                  src="/baja_burger_1774626452140.png"
+                  src={publicAsset('showcase-baja-burger.png')}
                   alt="Baja Burger"
                   className="food-img"
                   onError={(e) => {
@@ -84,7 +86,7 @@ const Home = () => {
             <div className="food-card card-2">
               <div className="food-img-wrapper">
                 <img
-                  src="/fish_tacos.jpg"
+                  src={publicAsset('showcase-fish-tacos.png')}
                   alt="Fish Tacos"
                   className="food-img"
                   onError={(e) => {
@@ -102,7 +104,7 @@ const Home = () => {
             <div className="food-card card-3">
               <div className="food-img-wrapper">
                 <img
-                  src="/poutine.jpg"
+                  src={publicAsset('showcase-poutine.png')}
                   alt="Poutine"
                   className="food-img"
                   onError={(e) => {
