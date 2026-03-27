@@ -35,9 +35,6 @@ const Footer = () => {
           <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer">
             Facebook
           </a>
-          <a href={SOCIAL.tiktok} target="_blank" rel="noopener noreferrer">
-            TikTok
-          </a>
         </div>
       </div>
 

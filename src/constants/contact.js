@@ -21,7 +21,6 @@ export const DIRECTIONS = {
 };
 
 export const SOCIAL = {
-  instagram: 'https://www.instagram.com/',
-  facebook: 'https://www.facebook.com/',
-  tiktok: 'https://www.tiktok.com/',
+  instagram: 'https://www.instagram.com/thebajaburgershack/',
+  facebook: 'https://www.facebook.com/thebajaburgershack/',
 };

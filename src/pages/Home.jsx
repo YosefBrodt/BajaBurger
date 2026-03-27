@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Marquee from '../components/Marquee';
+import ReviewsMarquee from '../components/ReviewsMarquee';
 import WaveDivider from '../components/WaveDivider';
 import { ArrowRight } from 'lucide-react';
 import { PHONE_DISPLAY, PHONE_TEL, DIRECTIONS } from '../constants/contact';
@@ -249,6 +250,9 @@ const Home = () => {
 
       {/* 5. Orange Marquee */}
       <Marquee items={marqueeItems} color="orange" speed="28s" />
+
+      {/* 5b. Reviews — infinite horizontal marquee */}
+      <ReviewsMarquee />
 
       {/* 6. Locations */}
       <section id="locations" className="section bg-offwhite locations-section">

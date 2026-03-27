@@ -1,0 +1,135 @@
+.reviews-marquee-section {
+  padding: 72px 0 88px;
+  overflow: hidden;
+}
+
+.reviews-marquee-header {
+  margin-bottom: 40px;
+}
+
+.reviews-marquee-mask {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.reviews-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  animation: reviews-scroll-x 75s linear infinite;
+  will-change: transform;
+}
+
+.reviews-marquee-group {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+@keyframes reviews-scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.review-card {
+  flex: 0 0 auto;
+  width: min(360px, 78vw);
+  padding: 24px 24px 22px;
+  border-radius: 20px;
+  background: var(--color-white);
+  border: 1px solid rgba(245, 98, 28, 0.18);
+  box-shadow: 0 12px 40px rgba(26, 191, 176, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.review-stars {
+  display: flex;
+  gap: 4px;
+  color: var(--color-yellow);
+}
+
+.review-quote {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.review-quote p {
+  margin: 0;
+  font-family: var(--font-story);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: rgba(245, 98, 28, 0.92);
+}
+
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 4px;
+  border-top: 1px solid rgba(26, 191, 176, 0.2);
+}
+
+.review-name {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-orange);
+}
+
+.review-source {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-teal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+    row-gap: 16px;
+  }
+
+  .reviews-marquee-group[aria-hidden='true'] {
+    display: none;
+  }
+
+  .reviews-marquee-mask {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .review-card {
+    width: min(100%, 360px);
+  }
+}
