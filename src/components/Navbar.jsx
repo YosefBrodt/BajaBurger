@@ -45,11 +45,11 @@ const Navbar = () => {
     { name: 'Home', to: '/' },
     { name: 'Menu', to: '/menu' },
     { name: 'Catering', to: '/catering' },
-    { name: 'Locations', to: '/#locations' },
+    { name: 'Locations', to: { pathname: '/', hash: 'locations' } },
   ];
 
   const isNavActive = (to) => {
-    if (to === '/#locations') {
+    if (typeof to === 'object' && to.hash === 'locations') {
       return path === '/' && location.hash === '#locations';
     }
     return path === to;
@@ -66,7 +66,7 @@ const Navbar = () => {
           <div className="nav-links">
             {links.map((link) => (
               <Link
-                key={link.to}
+                key={link.name}
                 to={link.to}
                 className={`nav-link ${isNavActive(link.to) ? 'active' : ''}`}
               >
@@ -100,7 +100,7 @@ const Navbar = () => {
       >
         {links.map((link) => (
           <Link
-            key={link.to}
+            key={link.name}
             to={link.to}
             className="mobile-link"
             onClick={() => setMobileOpen(false)}

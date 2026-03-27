@@ -6,6 +6,12 @@ import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Catering from './pages/Catering';
 
+function routerBasename() {
+  const base = import.meta.env.BASE_URL;
+  if (base === '/') return undefined;
+  return base.replace(/\/$/, '') || undefined;
+}
+
 // Scroll to top on route change
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -17,7 +23,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <Router>
+    <Router basename={routerBasename()}>
       <ScrollToTop />
       <Navbar />
       <main>

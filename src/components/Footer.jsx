@@ -17,7 +17,7 @@ const Footer = () => {
           <Link to="/">Home</Link>
           <Link to="/menu">Menu</Link>
           <Link to="/catering">Catering</Link>
-          <Link to="/#locations">Locations</Link>
+          <Link to={{ pathname: '/', hash: 'locations' }}>Locations</Link>
         </div>
 
         <div className="footer-col">
