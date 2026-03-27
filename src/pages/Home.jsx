@@ -45,11 +45,7 @@ const Home = () => {
           />
           <div className="hero-video-overlay" />
         </div>
-        <div className="ghost-text">BAJA BURGER SHACK</div>
         <div className="hero-content">
-          <div className="hero-badge">
-            Three Ottawa Beach Locations · Open Daily
-          </div>
           <h1 className="hero-h1 text-white">
             Ottawa's <br/> <span className="text-yellow">Best</span> <br/> Burger.
           </h1>

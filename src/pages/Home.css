@@ -56,10 +56,6 @@
   pointer-events: none;
 }
 
-.hero--video .ghost-text {
-  z-index: 2;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero--video .hero-video {
     display: none;
