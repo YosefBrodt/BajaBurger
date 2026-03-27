@@ -1,0 +1,340 @@
+.home-page {
+  width: 100%;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Base text opacities using standard css variables */
+.text-opacity-60 { opacity: 0.6; }
+.text-opacity-50 { opacity: 0.5; }
+.text-opacity-55 { opacity: 0.55; }
+.text-opacity-75 { opacity: 0.75; }
+
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 8px;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.section-title {
+  font-size: clamp(52px, 7vw, 88px);
+  margin-bottom: 60px;
+  line-height: 0.9;
+}
+
+.mt-8 { margin-top: 32px; }
+.mt-auto { margin-top: auto; }
+.z-10 { z-index: 10; }
+.relative { position: relative; }
+.text-center { text-align: center; }
+
+/* 1. Hero Section */
+.hero {
+  min-height: 100vh;
+  padding: 160px 5% 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.hero-h1 {
+  font-size: clamp(80px, 14vw, 200px);
+  line-height: 0.88;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+}
+
+.hero-subline {
+  font-size: 20px;
+  opacity: 0.85;
+  max-width: 400px;
+  line-height: 1.5;
+  margin-bottom: 48px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 3. Food Showcase */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.food-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.35s ease;
+  aspect-ratio: 4/5;
+  will-change: transform;
+}
+
+.card-1 { transform: rotate(-2deg); }
+.card-2 { transform: rotate(1.5deg) translateY(32px); }
+.card-3 { transform: rotate(-1.5deg); }
+
+.food-card:hover {
+  transform: rotate(0deg) scale(1.05);
+  z-index: 10;
+}
+
+.food-img-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.food-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.food-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 80px 32px 32px;
+  background: linear-gradient(to top, rgba(245, 98, 28, 0.92) 0%, rgba(245, 98, 28, 0) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.food-name {
+  font-family: var(--font-display);
+  font-size: 30px;
+  color: var(--color-white);
+  letter-spacing: 1px;
+}
+
+.food-price {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-yellow);
+}
+
+/* 4. Menu Preview */
+.menu-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.menu-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-cat-title {
+  font-size: 38px;
+  color: var(--color-teal);
+  border-bottom: 2px solid var(--color-teal);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.menu-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(26, 191, 176, 0.12);
+}
+
+.menu-item-name {
+  color: var(--color-orange);
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.menu-item-desc {
+  color: rgba(245, 98, 28, 0.45);
+  font-size: 12px;
+}
+
+.menu-item-price {
+  font-family: var(--font-display);
+  font-size: 24px;
+}
+
+.menu-addons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.addon-pill {
+  background-color: var(--color-offwhite);
+  border: 1.5px solid var(--color-teal);
+  color: var(--color-orange);
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.addon-price {
+  font-family: var(--font-display);
+  color: var(--color-teal);
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.menu-preview-cta {
+  margin-top: 64px;
+  text-align: center;
+}
+
+/* 6. Locations */
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.loc-card {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-teal);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  min-height: 380px;
+}
+
+.loc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(26, 191, 176, 0.15);
+}
+
+.loc-ghost-num {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-family: var(--font-display);
+  font-size: 88px;
+  color: var(--color-teal);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.loc-name {
+  font-size: 32px;
+  color: var(--color-orange);
+  margin-bottom: 16px;
+}
+
+.loc-address {
+  color: rgba(245, 98, 28, 0.5);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.loc-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.loc-hours-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--color-teal);
+  text-transform: uppercase;
+}
+
+.loc-hours-value {
+  color: var(--color-orange);
+  font-weight: 500;
+}
+
+/* 7. Catering CTA */
+.catering-cta {
+  padding: 160px 5%;
+}
+
+.catering-subline {
+  font-size: 20px;
+  max-width: 500px;
+  margin: 24px auto 48px;
+}
+
+.catering-phone {
+  margin-bottom: 48px;
+}
+
+.phone-number {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 7vw, 80px);
+  color: var(--color-yellow);
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.phone-number:hover {
+  color: var(--color-white);
+}
+
+.phone-note {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  .food-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .card-3 { display: none; }
+  .card-2 { transform: rotate(1.5deg) translateY(0); }
+  
+  .menu-columns,
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

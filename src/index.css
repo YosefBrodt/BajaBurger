@@ -1,0 +1,143 @@
+:root {
+  --color-orange: #F5621C;
+  --color-teal: #1ABFB0;
+  --color-yellow: #F5C842;
+  --color-white: #FFFFFF;
+  --color-offwhite: #FFF8F0;
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-offwhite);
+  color: var(--color-orange);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .display-text {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: 2.5px;
+  font-weight: 400; /* Bebas only has 400 */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+/* Utilities */
+.pill-btn {
+  border-radius: 9999px;
+  padding: 16px 32px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.pill-btn-yellow {
+  background-color: var(--color-yellow);
+  color: var(--color-orange);
+}
+
+.pill-btn-orange {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+}
+
+.pill-btn-white {
+  background-color: var(--color-white);
+  color: var(--color-orange);
+}
+
+.pill-btn-teal {
+  background-color: var(--color-teal);
+  color: var(--color-white);
+}
+
+.pill-btn-ghost {
+  background-color: transparent;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+}
+
+.pill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  padding: 100px 5%;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .section {
+    padding: 70px 24px;
+  }
+}
+
+/* Wave Divider */
+.wave-divider {
+  width: 100%;
+  height: 5vw;
+  min-height: 40px;
+  display: block;
+  margin-top: -1px; /* fix rendering gap */
+}
+
+.wave-to-teal {
+  fill: var(--color-teal);
+}
+
+.wave-to-yellow {
+  fill: var(--color-yellow);
+}
+
+/* Ghost Text Background */
+.ghost-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(80px, 20vw, 400px);
+  color: var(--color-white);
+  opacity: 0.08;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-orange { background-color: var(--color-orange); }
+.bg-teal { background-color: var(--color-teal); }
+.bg-yellow { background-color: var(--color-yellow); }
+.bg-white { background-color: var(--color-white); }
+.bg-offwhite { background-color: var(--color-offwhite); }
+
+.text-orange { color: var(--color-orange); }
+.text-teal { color: var(--color-teal); }
+.text-yellow { color: var(--color-yellow); }
+.text-white { color: var(--color-white); }
+.text-offwhite { color: var(--color-offwhite); }
