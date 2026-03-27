@@ -73,6 +73,16 @@
   gap: 16px;
 }
 
+/* Shown only on small screens — tap-to-call stays visible while scrolling */
+.nav-mobile-call {
+  display: none;
+}
+
+.nav-mobile-call span {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .nav-cta-btn {
   padding: 10px 24px;
   font-size: 0.9rem;
@@ -110,8 +120,38 @@
 }
 
 @media (max-width: 800px) {
-  .nav-links { display: none; }
-  .nav-cta-btn { display: none; }
-  .mobile-toggle { display: block; }
-  .mobile-menu { display: flex; }
+  .nav-links {
+    display: none;
+  }
+
+  .nav-cta-btn {
+    display: none;
+  }
+
+  .nav-mobile-call {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 0.8125rem;
+    min-height: 40px;
+    flex-shrink: 0;
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+
+  .nav-logo-img {
+    max-width: min(168px, 46vw);
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
 }

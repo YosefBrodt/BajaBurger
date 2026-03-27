@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { PHONE_TEL, MAILTO_CATERING } from '../constants/contact';
+import { Menu, Phone, X } from 'lucide-react';
+import { PHONE_TEL, PHONE_DISPLAY, MAILTO_CATERING } from '../constants/contact';
 import { LOGO_SRC } from '../constants/branding';
 import './Navbar.css';
 
@@ -80,6 +80,14 @@ const Navbar = () => {
           </div>
 
           <div className="nav-right">
+            <a
+              href={PHONE_TEL}
+              className="pill-btn pill-btn-white nav-mobile-call"
+              aria-label={`Call ${PHONE_DISPLAY}`}
+            >
+              <Phone size={18} strokeWidth={2.25} aria-hidden="true" />
+              <span>Call</span>
+            </a>
             <a href={ctaHref} className={buttonClass}>
               {buttonText}
             </a>
