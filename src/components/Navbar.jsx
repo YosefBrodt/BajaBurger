@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { PHONE_TEL, MAILTO_CATERING } from '../constants/contact';
 import './Navbar.css';
 
 const Navbar = () => {
   const location = useLocation();
   const path = location.pathname;
-  
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -20,11 +21,11 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Determine Nav styling based on route and scroll state
   let navClass = 'navbar';
   let logoClass = 'nav-logo';
   let buttonClass = 'pill-btn pill-btn-ghost nav-cta-btn';
   let buttonText = 'Call Us';
+  let ctaHref = PHONE_TEL;
 
   if (path === '/') {
     navClass += scrolled ? ' nav-solid-orange' : ' nav-transparent';
@@ -34,62 +35,82 @@ const Navbar = () => {
     logoClass += ' text-white';
   } else if (path === '/catering') {
     navClass += ' nav-solid-orange';
-    logoClass += ' text-yellow'; // Or white, let's say white for consistency, prompt said "white or yellow depending on bg"
+    logoClass += ' text-yellow';
     buttonClass = 'pill-btn pill-btn-yellow nav-cta-btn';
     buttonText = 'Get a Quote';
+    ctaHref = MAILTO_CATERING;
   }
 
   const links = [
-    { name: 'Home', path: '/' },
-    { name: 'Menu', path: '/menu' },
-    { name: 'Catering', path: '/catering' },
-    { name: 'Locations', path: '/#locations' }
+    { name: 'Home', to: '/' },
+    { name: 'Menu', to: '/menu' },
+    { name: 'Catering', to: '/catering' },
+    { name: 'Locations', to: '/#locations' },
   ];
+
+  const isNavActive = (to) => {
+    if (to === '/#locations') {
+      return path === '/' && location.hash === '#locations';
+    }
+    return path === to;
+  };
 
   return (
     <>
-      <nav className={navClass}>
+      <nav className={navClass} aria-label="Main">
         <div className="nav-container">
           <Link to="/" className={logoClass}>
             BAJA BURGER SHACK
           </Link>
-          
+
           <div className="nav-links">
-            {links.map((link, idx) => (
-              <a 
-                key={idx} 
-                href={link.path} 
-                className={`nav-link ${path === link.path && link.path !== '/#locations' ? 'active' : ''}`}
+            {links.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`nav-link ${isNavActive(link.to) ? 'active' : ''}`}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
           <div className="nav-right">
-            <button className={buttonClass}>{buttonText}</button>
-            <button className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)}>
+            <a href={ctaHref} className={buttonClass}>
+              {buttonText}
+            </a>
+            <button
+              type="button"
+              className="mobile-toggle"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            >
               {mobileOpen ? <X size={28} color="white" /> : <Menu size={28} color="white" />}
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
-      <div className={`mobile-menu ${mobileOpen ? 'open' : ''} bg-orange`}>
-        {links.map((link, idx) => (
-          <a 
-            key={idx} 
-            href={link.path} 
+      <div
+        id="mobile-menu"
+        className={`mobile-menu ${mobileOpen ? 'open' : ''} bg-orange`}
+        aria-hidden={!mobileOpen}
+      >
+        {links.map((link) => (
+          <Link
+            key={link.to}
+            to={link.to}
             className="mobile-link"
             onClick={() => setMobileOpen(false)}
           >
             {link.name}
-          </a>
+          </Link>
         ))}
-        <button className="pill-btn pill-btn-white" style={{marginTop: '2rem'}}>
+        <a href={ctaHref} className="pill-btn pill-btn-white" style={{ marginTop: '2rem' }}>
           {buttonText}
-        </button>
+        </a>
       </div>
     </>
   );

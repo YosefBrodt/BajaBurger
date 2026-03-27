@@ -1,16 +1,35 @@
 import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Marquee from '../components/Marquee';
 import WaveDivider from '../components/WaveDivider';
 import { ArrowRight } from 'lucide-react';
+import { PHONE_DISPLAY, PHONE_TEL, DIRECTIONS } from '../constants/contact';
 import './Home.css';
-import { Link } from 'react-router-dom';
 
-const marquee1Items = ['BAJA BURGER', 'FISH TACOS', 'FRESH CUT FRIES', 'POUTINE', 'COLD BEER', 'BEACH VIBES', 'FROZEN COCKTAILS', 'HOT DOGS'];
-const marquee2Items = ['BAJA BURGER', 'FISH TACOS', 'FRESH CUT FRIES', 'POUTINE', 'COLD BEER', 'BEACH VIBES', 'FROZEN COCKTAILS', 'HOT DOGS'];
+const marqueeItems = [
+  'BAJA BURGER',
+  'FISH TACOS',
+  'FRESH CUT FRIES',
+  'POUTINE',
+  'COLD BEER',
+  'BEACH VIBES',
+  'FROZEN COCKTAILS',
+  'HOT DOGS',
+];
 
 // Static image fallback for the burger applied inline
 
 const Home = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#locations') {
+      requestAnimationFrame(() => {
+        document.getElementById('locations')?.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  }, [location]);
+
   return (
     <div className="home-page">
       {/* 1. Hero Section */}
@@ -37,7 +56,7 @@ const Home = () => {
       <WaveDivider toColor="yellow" />
 
       {/* 2. Yellow Marquee */}
-      <Marquee items={marquee1Items} color="yellow" speed="22s" />
+      <Marquee items={marqueeItems} color="yellow" speed="22s" />
 
       {/* 3. Food Showcase */}
       <section className="section bg-teal food-showcase">
@@ -173,7 +192,7 @@ const Home = () => {
       </section>
 
       {/* 5. Orange Marquee */}
-      <Marquee items={marquee2Items} color="orange" speed="28s" />
+      <Marquee items={marqueeItems} color="orange" speed="28s" />
 
       {/* 6. Locations */}
       <section id="locations" className="section bg-offwhite locations-section">
@@ -190,7 +209,14 @@ const Home = () => {
                 <span className="loc-hours-label">Hours</span>
                 <span className="loc-hours-value">Mon–Sun 11:30am–10:00pm</span>
               </div>
-              <button className="pill-btn pill-btn-teal mt-auto">Get Directions</button>
+              <a
+                href={DIRECTIONS.britannia}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill-btn pill-btn-teal mt-auto"
+              >
+                Get Directions
+              </a>
             </div>
 
             <div className="loc-card">
@@ -201,7 +227,14 @@ const Home = () => {
                 <span className="loc-hours-label">Hours</span>
                 <span className="loc-hours-value">Mon–Sun 11:30am–9:00pm</span>
               </div>
-              <button className="pill-btn pill-btn-teal mt-auto">Get Directions</button>
+              <a
+                href={DIRECTIONS.mooneys}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill-btn pill-btn-teal mt-auto"
+              >
+                Get Directions
+              </a>
             </div>
 
             <div className="loc-card">
@@ -212,7 +245,14 @@ const Home = () => {
                 <span className="loc-hours-label">Hours</span>
                 <span className="loc-hours-value">Mon–Sun 11:30am–9:00pm</span>
               </div>
-              <button className="pill-btn pill-btn-teal mt-auto">Get Directions</button>
+              <a
+                href={DIRECTIONS.petrie}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill-btn pill-btn-teal mt-auto"
+              >
+                Get Directions
+              </a>
             </div>
           </div>
         </div>
@@ -229,7 +269,9 @@ const Home = () => {
           </p>
           
           <div className="catering-phone">
-            <a href="tel:6137698885" className="phone-number">+(base) 613-769-8885</a>
+            <a href={PHONE_TEL} className="phone-number">
+              {PHONE_DISPLAY}
+            </a>
             <p className="phone-note">Special events & catering line</p>
           </div>
 

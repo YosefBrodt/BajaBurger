@@ -46,3 +46,24 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-100% / 4)); }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .marquee-group:not(:first-of-type) {
+    display: none;
+  }
+  .marquee-group:first-of-type {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 8px;
+    column-gap: 24px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .marquee-container {
+    overflow: visible;
+    white-space: normal;
+  }
+}

@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { PHONE_TEL, EMAIL, SOCIAL } from '../constants/contact';
 import './Footer.css';
 
 const Footer = () => {
   return (
     <footer className="footer bg-orange">
       <div className="footer-container">
-        
         <div className="footer-col col-logo">
           <h2>BAJA BURGER SHACK</h2>
           <p>100% pure ground beef. Fresh cut fries. Cold beer at the beach.</p>
@@ -13,28 +14,33 @@ const Footer = () => {
 
         <div className="footer-col">
           <h3>Pages</h3>
-          <a href="/">Home</a>
-          <a href="/menu">Menu</a>
-          <a href="/catering">Catering</a>
-          <a href="/#locations">Locations</a>
+          <Link to="/">Home</Link>
+          <Link to="/menu">Menu</Link>
+          <Link to="/catering">Catering</Link>
+          <Link to="/#locations">Locations</Link>
         </div>
 
         <div className="footer-col">
           <h3>Contact</h3>
-          <p>hello@bajaburger.ca</p>
-          <p>+1 (613) 769-8885</p>
+          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          <a href={PHONE_TEL}>+1 (613) 769-8885</a>
           <p>Open Daily 11:30am</p>
         </div>
 
         <div className="footer-col border-none">
           <h3>Follow</h3>
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
-          <a href="#">TikTok</a>
+          <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer">
+            Instagram
+          </a>
+          <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer">
+            Facebook
+          </a>
+          <a href={SOCIAL.tiktok} target="_blank" rel="noopener noreferrer">
+            TikTok
+          </a>
         </div>
-
       </div>
-      
+
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} Baja Burger Shack. All rights reserved.</p>
       </div>

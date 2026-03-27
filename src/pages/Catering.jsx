@@ -1,7 +1,13 @@
 import React from 'react';
 import WaveDivider from '../components/WaveDivider';
 import Marquee from '../components/Marquee';
-import { ArrowRight } from 'lucide-react';
+import {
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  EMAIL,
+  MAILTO_CATERING,
+  MAILTO_BOOK_CLASSIC,
+} from '../constants/contact';
 import './Catering.css';
 
 const marqueeItems = [
@@ -28,7 +34,9 @@ const Catering = () => {
           
           <div className="catering-hero-bottom">
             <p className="hero-subline text-white">We bring the beach vibes and the best burgers in Ottawa right to your backyard, office, or venue.</p>
-            <button className="pill-btn pill-btn-yellow hero-btn">Get a Quote</button>
+            <a href={MAILTO_CATERING} className="pill-btn pill-btn-yellow hero-btn">
+              Get a Quote
+            </a>
           </div>
         </div>
       </section>
@@ -86,7 +94,7 @@ const Catering = () => {
               <h3 className="cat-menu-title">Salads</h3>
               <ul className="cat-menu-list">
                 <li>Romaine heart Caesar w/ creamy dressing</li>
-                <li>Pasta & vegetable salad w/ city's dressing</li>
+                <li>Pasta & vegetable salad w/ citrus dressing</li>
                 <li>Mixed organic greens w/ balsamic dressing</li>
                 <li>Asian cabbage slaw w/ lime-ginger vinaigrette</li>
                 <li>Rustic Greek salad w/ herb dressing</li>
@@ -144,7 +152,9 @@ const Catering = () => {
                 <li>Pop or bottled water</li>
                 <li>Ice cream bars</li>
               </ul>
-              <button className="pill-btn pill-btn-teal w-full mt-8">Book Classic</button>
+              <a href={MAILTO_BOOK_CLASSIC} className="pill-btn pill-btn-teal w-full mt-8">
+                Book Classic
+              </a>
             </div>
 
             <div className="pricing-card">
@@ -192,11 +202,15 @@ const Catering = () => {
           <h2 className="section-title text-white">Ready to <br /> <span className="text-yellow">Book?</span></h2>
           
           <div className="catering-phone">
-            <a href="tel:6137698885" className="phone-number">+(base) 613-769-8885</a>
+            <a href={PHONE_TEL} className="phone-number">
+              {PHONE_DISPLAY}
+            </a>
             <p className="phone-note text-white text-opacity-45">Special events & catering line</p>
           </div>
 
-          <a href="mailto:hello@bajaburger.ca" className="email-link mt-8">hello@bajaburger.ca</a>
+          <a href={`mailto:${EMAIL}`} className="email-link mt-8">
+            {EMAIL}
+          </a>
         </div>
       </section>
 
